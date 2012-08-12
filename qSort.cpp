@@ -49,10 +49,16 @@ int FindMiddle(int *ARRAY, int size)
 void partition(int* ARRAY, int *low, int *high, int mid)
 {
 	do{									
-		while(ARRAY[*low] < mid)	{(*low)++ ;}
-		while(ARRAY[*high] > mid)	{(*high)-- ;}	
-			if(low <= high) {swap(&ARRAY[*low], &ARRAY[*high]);
-								low++; high--;}
+		while(ARRAY[*low] < mid)	
+				{(*low)++ ;}
+		while(ARRAY[*high] > mid)	
+				{(*high)-- ;}
+			if(*low <= *high) 
+				{
+					swap(&ARRAY[*low], 
+					&ARRAY[*high]);
+					(*low)++; (*high)-- ;
+				}
 		}while(*low <= *high);
 }
 
