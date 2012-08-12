@@ -1,11 +1,9 @@
 #include "stdafx.h"
 #include "qSort.h"
-//#include <stdio.h>
 #include <iostream>
 #include <math.h>
 #include <time.h>
 #include <assert.h>
-//#include <iomanip>
 using namespace std;
 
 const int N = 11;
@@ -28,12 +26,12 @@ int _tmain()
 	system("pause");
 }
 
-void qSort(int* ARRAY, int size)	//
+void qSort(int* ARRAY, int size)
 {
 	assert(size >= 0);
 	int low = 0;
 	int high = size - 1;
-	int mid = FindMiddle(ARRAY, high);  // ARRAY[(low+high)/2];			// FindMiddle()
+	int mid = FindMiddle(ARRAY, high);
 	
 	partition(ARRAY, &low, &high, mid);
 	
@@ -42,23 +40,23 @@ void qSort(int* ARRAY, int size)	//
 	
 }
 
-int FindMiddle(int *ARRAY, int size)  // +
+int FindMiddle(int *ARRAY, int size)
 {	
 	srand(time(NULL));
 	return ARRAY[rand() % size];
 }
 
-void partition(int* ARRAY, int *low, int *high, int mid)		//+
+void partition(int* ARRAY, int *low, int *high, int mid)
 {
 	do{									
 		while(ARRAY[*low] < mid)	{(*low)++ ;}
-		while(ARRAY[*high] > mid)	{(*high)-- ;}				//где-то тут!
+		while(ARRAY[*high] > mid)	{(*high)-- ;}	
 			if(low <= high) {swap(&ARRAY[*low], &ARRAY[*high]);
 								low++; high--;}
 		}while(*low <= *high);
 }
 
-void swap(int* t1, int* t2)	//+
+void swap(int* t1, int* t2)
 {
 		int temp = *t1;			
 		*t1=*t2;				
