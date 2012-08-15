@@ -1,0 +1,1 @@
+int bSearch(int *ARRAY, int SIZE, int Elem);
